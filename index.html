@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Time Chunks — Break time into clear segments with ease"
+    />
+    <title>Time Chunks</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <!-- Favicons for light/dark modes -->
+    <link
+      rel="icon"
+      href="assets/app-icon-light.png"
+      media="(prefers-color-scheme: light)"
+    />
+    <link
+      rel="icon"
+      href="assets/app-icon-dark.png"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="apple-touch-icon" href="assets/app-icon-light.png" />
+    <meta name="theme-color" content="#0f1724" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="#">
+          <img
+            id="site-logo"
+            src="assets/app-icon-light.png"
+            alt="Time Chunks logo"
+            class="logo"
+          />
+          <span class="brand-name">Time Chunks</span>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container">
+          <h1 class="hero-title">Calculate Time Intervals</h1>
+          <p class="hero-sub">
+            Break time into clear segments with ease.
+          </p>
+
+          
+          <div class="store-badges" aria-label="Download on the App Store">
+            <a class="store-badge" href="https://apps.apple.com/us/app/time-chunks/id6752252872" aria-label="Download on the App Store">
+              <picture>
+                <source srcset="assets/AppStoreBadgeDark.svg" media="(prefers-color-scheme: dark)">
+                <img src="assets/AppStoreBadgeLight.svg" class="badge" alt="Download on the App Store">
+              </picture>
+            </a>
+          </div>
+         
+
+          <div class="screenshot-grid" aria-hidden="true">
+            <div class="phone-mock">
+              <picture>
+                <source
+                  srcset="assets/1-dark.png"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img src="assets/1-light.png" alt="Time Chunks screenshot" />
+              </picture>
+            </div>
+            <div class="phone-mock">
+              <picture>
+                <source
+                  srcset="assets/2-dark.png"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img src="assets/2-light.png" alt="Time Chunks screenshot" />
+              </picture>
+            </div>
+            <div class="phone-mock">
+              <picture>
+                <source
+                  srcset="assets/3-dark.png"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img src="assets/3-light.png" alt="Time Chunks screenshot" />
+              </picture>
+            </div>
+            <div class="phone-mock">
+              <picture>
+                <source
+                  srcset="assets/4-dark.png"
+                  media="(prefers-color-scheme: dark)"
+                />
+                <img src="assets/4-light.png" alt="Time Chunks screenshot" />
+              </picture>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="features" class="features">
+        <div class="container">
+          <h2>Features</h2>
+          <div class="feature-grid">
+            <article class="feature">
+              <h3>Flexible Calculations</h3>
+              <p>
+                Select from three fix modes to fit your needs.
+              </p>
+            </article>
+            <article class="feature">
+              <h3>Accessible</h3>
+              <p>
+                Supports light and dark interfaces, larger text, VoiceOver, and
+                more.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-footer"></footer>
+
+    <script src="js/footer.js"></script>
+    <script>
+      // Swap header logo based on system color scheme
+      (function () {
+        var logo = document.getElementById("site-logo");
+        if (!logo) return;
+        var darkSrc = "assets/app-icon-dark.png";
+        var lightSrc = "assets/app-icon-light.png";
+        var mq = window.matchMedia("(prefers-color-scheme: dark)");
+        function update() {
+          logo.src = mq.matches ? darkSrc : lightSrc;
+        }
+        mq.addEventListener
+          ? mq.addEventListener("change", update)
+          : mq.addListener(update);
+        update();
+      })();
+    </script>
+  </body>
+</html>

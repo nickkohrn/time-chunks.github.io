@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Privacy policy for Time Chunks." />
+  <title>Privacy Policy — Time Chunks</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="icon" href="assets/app-icon-light.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="assets/app-icon-dark.png" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#0f1724">
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img id="site-logo" src="assets/app-icon-light.png" alt="Time Chunks logo" class="logo" />
+        <span class="brand-name">Time Chunks</span>
+      </a>
+    </div>
+  </header>
+
+  <main class="container" style="padding:2rem 1rem;">
+    <article>
+      <h1>Privacy Policy</h1>
+
+      <section>
+        <p>Your privacy is important. If you have opted in to allow Apple to share information with developers, the
+          developer receives some basic anonymized analytics.</p>
+        <p>The developer does not distribute your data, and the anonymized information is collected solely for purposes
+          of improving the app.</p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <script src="js/footer.js"></script>
+  <script>
+    // Swap header logo based on system color scheme
+    (function () {
+      var logo = document.getElementById('site-logo');
+      if (!logo) return;
+      var darkSrc = 'assets/app-icon-dark.png';
+      var lightSrc = 'assets/app-icon-light.png';
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+      function update() { logo.src = mq.matches ? darkSrc : lightSrc; }
+      mq.addEventListener ? mq.addEventListener('change', update) : mq.addListener(update);
+      update();
+    })();
+  </script>
+
+</body>
+
+</html>
